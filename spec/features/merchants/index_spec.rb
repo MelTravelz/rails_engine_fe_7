@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe "/merchants", type: :feature do
   describe "as a visitor, when I visit merchants index page" do 
     before(:each) do
-      @tea_shop1 = TeaShop.new(attributes: { name: "Celestial Seasonings" }) 
       visit "/merchants"
     end
 

@@ -12,7 +12,7 @@ RSpec.describe TeaShop do
 
   it "exists & has attributes" do 
     expect(tea_shop).to be_a(TeaShop)
-    expect(tea_shop.id).to eq(55)
-    expect(tea_shop.name).to eq("Celestial Seasonings")
+    expect(tea_shop.merchant_id).to eq(55)
+    expect(tea_shop.merchant_name).to eq("Celestial Seasonings")
   end
 end
