@@ -16,19 +16,19 @@ RSpec.describe TeaShopFacade do
         tea_shop = TeaShopFacade.new(empty_string: "")
 
         expect(tea_shop.get_all_merchants).to be_an(Array)
-        expect(tea_shop.get_all_merchants.first).to be_a(Merchant)
+        expect(tea_shop.get_all_merchants.first).to be_a(TeaShop)
       end
     end
 
-    # context "#get_merch_and_items" do
-    #   it "returns an array of merchant objects" do
-    #     tea_shop = TeaShopFacade.new(merchant_id: 1)
+    context "#get_merch_and_items" do
+      it "returns an array of merchant objects" do
+        tea_shop = TeaShopFacade.new(merchant_id: 1)
 
-    #     expect(tea_shop.get_merch_and_items).to be_an(TeaShop)
-    #     expect(tea_shop.get_merch_and_items.merchant_id).to eq(1)
-    #     expect(tea_shop.get_merch_and_items.merchant_name).to eq("Schroeder-Jerde")
-    #     expect(tea_shop.get_merch_and_items.items.count).to eq(15)
-    #   end
-    # end
+        expect(tea_shop.get_merch_and_items).to be_an(TeaShop)
+        expect(tea_shop.get_merch_and_items.merchant_id).to eq(1)
+        expect(tea_shop.get_merch_and_items.merchant_name).to eq("Schroeder-Jerde")
+        expect(tea_shop.get_merch_and_items.items.count).to eq(15)
+      end
+    end
   end
 end
