@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Merchant do
 
-
   let(:merchant1) { Merchant.new({ merchant_id: 55, merchant_name: "Celestial Seasonings" })}
 
   it "exists & has attributes" do 
