@@ -14,6 +14,9 @@ RSpec.describe "/merchants/:id", type: :feature do
       expect(page).to have_content("Price: $42.91")
       expect(page).to have_content("Description: Sunt eum id eius magni consequuntur delectus")
 
+      # testing total number of items on page: 
+      expect(page).to have_content("Name:", count: 15)
+      # testing two more indv item names: 
       expect(page).to have_content("Name: Item Expedita Aliquam")
       expect(page).to have_content("Name: Item Provident At")
     end

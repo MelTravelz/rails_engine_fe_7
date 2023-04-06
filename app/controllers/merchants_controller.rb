@@ -5,7 +5,10 @@ class MerchantsController < ApplicationController
   end
 
   def show
-    @merchant = merchants.find { |merchant| merchant.merchant_id == params[:merchant_id].to_i}
+    facade = TeaShopFacade.new
+    merchants = facade.get_all_merchants
+  
+    @merchant = merchants.find { |merchant| merchant.merchant_id == params[:merchant_id]}
     # @merch_and_items = tea_shop_facade.get_merch_and_items
     @merch_items = tea_shop_facade.get_merch_items(params[:merchant_id])
   end
