@@ -1,8 +1,9 @@
 class TeaShop
-  attr_reader :merchant_name, :merchant_id
+  attr_reader :merchant_id, :merchant_name, :items
 
-  def initialize(info_hash)
-    @merchant_name = info_hash[:attributes][:name]
-    @merchant_id = info_hash[:id]
+  def initialize(info)
+    @merchant_id = info[:merchant][:merchant_id]
+    @merchant_name = info[:merchant][:merchant_name]
+    @items = info[:items]
   end
 end

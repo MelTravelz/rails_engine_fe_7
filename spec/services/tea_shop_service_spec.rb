@@ -2,8 +2,11 @@ require 'rails_helper'
 
 RSpec.describe TeaShopService do
   describe "instance methods" do
+      # subject(:service) { described_class.new }
+
     context "#fetch_api" do
-      it "returns jason object" do
+      # it "returns a status of 200 for 'merchants'" do
+      it "#get_all_merchants" do
         all_merch_request = TeaShopService.new.fetch_api("merchants")
 
         expect(all_merch_request).to be_a(Hash)
@@ -17,6 +20,16 @@ RSpec.describe TeaShopService do
         expect(all_merch_request[:data].first[:attributes].keys).to eq([:name])
         expect(all_merch_request[:data].first[:attributes][:name]).to be_a(String) 
       end
+    end
+
+    it "#get_one_merchant" do
+      all_merch_request = TeaShopService.new.fetch_api("merchants/1")
+      expect(all_merch_request).to be_a(Hash)
+    end
+
+    it "#get_merch_items" do
+      all_merch_request = TeaShopService.new.fetch_api("merchants/1/items")
+      expect(all_merch_request).to be_a(Hash)
     end
   end
 end

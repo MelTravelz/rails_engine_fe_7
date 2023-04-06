@@ -6,7 +6,7 @@ RSpec.describe "/merchants", type: :feature do
       visit "/merchants"
     end
 
-    it "I see all merchants names as links" do 
+    it "I see a list of all merchants names as links" do 
       expect(page).to have_content("All Tea Shops:")
 
       # Should I stub this information so it will not fail if the database changes?

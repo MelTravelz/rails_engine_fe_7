@@ -1,1 +1,6 @@
-<h1></h1>
+<h1><%= @merch_and_items.merchant_name %>'s Page</h1>
+<br>
+<% @merch_and_items.items.each do |item| %>
+<p><%= item[:item_name] %></p>
+<br>
+<% end %>
