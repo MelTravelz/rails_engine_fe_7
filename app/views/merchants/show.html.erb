@@ -1,6 +1,9 @@
-<h1><%= @merch_and_items.merchant_name %>'s Page</h1>
+<h1><%= @merchant.merchant_name %>'s Page</h1>
 <br>
-<% @merch_and_items.items.each do |item| %>
-<p><%= item[:item_name] %></p>
+<h4>All Items</h4>
+<% @merch_items.each do |item| %>
+<p>Name: <%= item.item_name %></p>
+<p>Price: <%= number_to_currency(item.item_price) %></p>
+<p>Description: <%= item.item_desc %></p>
 <br>
 <% end %>
